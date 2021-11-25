@@ -13,13 +13,19 @@ public class main {
         int volbaPrevodu = sc.nextInt();
         sc.nextLine();
         if (volbaPrevodu == 1) {
-            System.out.print("Zadajte cislo na konverziu: ");
+            System.out.print("Zadajte rimske cislo na konverziu: ");
             String nacitaneCislo = sc.nextLine();
             rimskeNaArabske = new RimskeNaArabske(nacitaneCislo);
             rimskeNaArabske.premen();
         }
+        else if (volbaPrevodu == 2){
+            System.out.print("Zadajte arabske cislo na konverziu: ");
+            String nacitaneCislo = sc.nextLine();
+            arabskeNaRimske = new ArabskeNaRimske(nacitaneCislo);
+            arabskeNaRimske.premen();
+        }
         else {
-            arabskeNaRimske = new ArabskeNaRimske();
+            System.out.println("Zadali ste nespravne cislo!!!");
         }
     }
 }
