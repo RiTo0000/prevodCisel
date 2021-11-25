@@ -9,20 +9,18 @@ public class ArabskeNaRimske {
 
     }
 
-    public void premen() {
+    public String premen() {
         switch (cisloNaKonverziu.length()) {
             case 1:
-                System.out.println(jednociferne(1));
-                break;
+                return (jednociferne(1));
             case 2:
-                System.out.println(dvojciferne(2));
-                break;
+                return (dvojciferne(2));
             case 3:
-                System.out.println(trojciferne(3));
-                break;
+                return (trojciferne(3));
             case 4:
-                System.out.println(stvorciferne(4));
-                break;
+                return (stvorciferne(4));
+            default:
+                return "Pozor nieco nie je v poriadku!!!";
         }
     }
 

@@ -16,16 +16,26 @@ public class main {
             System.out.print("Zadajte rimske cislo na konverziu: ");
             String nacitaneCislo = sc.nextLine();
             rimskeNaArabske = new RimskeNaArabske(nacitaneCislo);
-            rimskeNaArabske.premen();
+            String cisloNaKontrolu = Integer.toString(rimskeNaArabske.premen());
+            arabskeNaRimske = new ArabskeNaRimske(cisloNaKontrolu);
+            if (nacitaneCislo.equals(arabskeNaRimske.premen()))
+                System.out.println(cisloNaKontrolu);
+            else
+                System.out.println("Zadali ste zle vstupne cislo");
+
         }
         else if (volbaPrevodu == 2){
             System.out.print("Zadajte arabske cislo na konverziu: ");
             String nacitaneCislo = sc.nextLine();
-            arabskeNaRimske = new ArabskeNaRimske(nacitaneCislo);
-            arabskeNaRimske.premen();
+            if (Integer.parseInt(nacitaneCislo) < 1 || Integer.parseInt(nacitaneCislo) > 4999)
+                System.out.println("Zadali ste cislo mimo rozsahu");
+            else {
+                arabskeNaRimske = new ArabskeNaRimske(nacitaneCislo);
+                System.out.println(arabskeNaRimske.premen());
+            }
         }
         else {
-            System.out.println("Zadali ste nespravne cislo!!!");
+            System.out.println("Zadali ste nespravne cislo volby!!!");
         }
     }
 }
